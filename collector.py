@@ -255,7 +255,7 @@ def parseFile(filePath, yamlConfig):
                         user_dict["username"] = validLogin[:-1].split(":")[1].split('@')[0].lstrip()
                         user_dict["domain"] =validLogin[:-1].split(":")[1].split('@')[1].lstrip().upper()
                         user_dict["password"] = validLogin[:-1].split(":")[2].lstrip().rstrip()
-                    # mainlog.debug(f'Account compromised: {validLogin[:-1].split(":")[1].lstrip()}')
+
                         compromised_users.append(user_dict)
 
             if isCmeRawLog(inputDataRaw) and not lsassDump:
@@ -427,7 +427,7 @@ if __name__ == '__main__':
                 Engine = None
                 Engine = ImpacketLDAPConnector
 
-                with Engine(yamlConfig['ldap_server'], 3, yamlConfig['ldap_domain'], yamlConfig['ldap_username'], yamlConfig['ldap_password'],'DC=legitcorp,DC=com', 10, 2, 0) as engine:
+                with Engine(yamlConfig['ldap_server'], 3, yamlConfig['ldap_domain'], yamlConfig['ldap_username'], yamlConfig['ldap_password'],'', 10, 2, 0) as engine:
                     for user in compromised_users:
                         try:
                             searchQuery = '(&(objectclass=user)(|(CN=' + user['username'] + ')(sAMAccountName=' + user['username'] + ')))'
