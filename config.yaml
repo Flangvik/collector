@@ -1,0 +1,11 @@
+{
+
+  'neo4j_username': 'neo4j',
+  'neo4j_password': 'neo4j',
+  'neo4j_url' : 'bolt://localhost:7687',
+  'ldap_username': 'bruce.banner',
+  'ldap_password': 'Passw0rd!123',
+  'ldap_server' : '192.168.136.2',
+  'ldap_domain' : 'LAB.COM',
+  'high_value_groups' : ['Domain Admin', 'DnsAdmins','Enterprise Admins','Event Log Readers','Group Policy Creators Owners','Hyper-V Administrators','Print Operators','Protected Users','Schema Admins','Server Operators','Administrators','Backup Operators','Domain Controllers'],
+ }
